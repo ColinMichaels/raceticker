@@ -1,0 +1,43 @@
+<div class="container-fluid  mx-auto bg-black mt-4 p-4 bg-slate-950">
+  <div>
+
+  </div>
+  <table class="table-auto">
+    <tbody class="table-header-group">
+    <tr *ngFor="let race of mockData.slice(0, 1);let i = index;" class="p-4 bg-slate-900 table-row">
+      <td class="table-cell" *ngFor="let num of [1,2,3,4,5]; let i = index;">
+        <span class="text-white px-2 py-2 bg-violet-800">{{race['Position'+num]}}</span>
+        <span class="font-bold highlight py-2 px-4">{{race['FullName'+num] | uppercase}}</span>
+        <span class="text-sm text-white "> Lap: {{race['Laps'+num]}}</span>
+        <div class=" text-2xl highlight mt-4 py-2 px-4">
+          <img class="float-left mr-2" [src]="flagSVG"/> {{race['LastLapTime'+num]}}</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--
+  {{mockData | json}} -->
+  <!-- <div class="csv-result-table">
+        <div *ngFor="let race of mockData;let i = index;" class="max-h-50 overflow-y-scroll">
+
+          <p>Date : {{race.Date}}</p>
+          <p>Track : {{race.Track}}</p>
+          <p>Class: {{race.Class}}</p>
+          <p>Race: {{race.Race}}</p>
+          <p>Flag Status: {{race.FlagStatus}}</p>
+          <p>Icon: <img [src]="race.FlagIcon"/></p>
+          <p>Laps To Go: {{race.LapsToGo}}</p>
+          <p>MRP Logo:  <img [src]="race.MRPLogo"/></p>
+          <p>Position: {{race.Position1}}</p>
+          <p>First Name(1): {{race.FirstName1}}</p>
+          <p>Last Name(1): {{race.LastName1}}</p>
+          <p>Full Name(1): {{race.FullName1}}</p>
+          <p>laps1: {{race.Laps1}}</p>
+          <p>Last Lap Time (1): {{race.LastLapTime1}}</p>
+          <p>Diff1: {{race.Diff1}}</p>
+
+
+      </div>
+  </div> -->
+</div>
