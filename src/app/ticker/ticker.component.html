@@ -1,16 +1,18 @@
 <div class="container-fluid  mx-auto bg-black mt-4 p-4 bg-slate-950">
   <div>
 
-  </div>
+  </div>                                                            s
   <table class="table-auto">
     <tbody class="table-header-group">
+    <tr><td colspan="5"> <div class="bg-violet-800 text-white py-2 px-4">{{mockData[0]['Track']}}   <span class="text-2xl highlight-text ml-4">{{mockData[0]['Class']}}</span></div></td></tr>
     <tr *ngFor="let race of mockData.slice(0, 1);let i = index;" class="p-4 bg-slate-900 table-row">
       <td class="table-cell" *ngFor="let num of [1,2,3,4,5]; let i = index;">
         <span class="text-white px-2 py-2 bg-violet-800">{{race['Position'+num]}}</span>
         <span class="font-bold highlight py-2 px-4">{{race['FullName'+num] | uppercase}}</span>
         <span class="text-sm text-white "> Lap: {{race['Laps'+num]}}</span>
         <div class=" text-2xl highlight mt-4 py-2 px-4">
-          <img class="float-left mr-2" [src]="flagSVG"/> {{race['LastLapTime'+num]}}</div>
+          <img class="float-left mr-2" [src]="flagSVG"/> {{race['LastLapTime'+num]}}
+        </div>
       </td>
     </tr>
     </tbody>
