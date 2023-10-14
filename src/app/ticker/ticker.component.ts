@@ -38,6 +38,7 @@ export class TickerComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
 
+    this.loadFeed();
     this.timer = setInterval(()=>{
             this.loadFeed();
     },10000);
