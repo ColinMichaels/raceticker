@@ -37,6 +37,7 @@ export class CsvService {
     reader.readAsText(blob);
     await new Promise<void>(resolve => reader.onload = () => resolve());
     this.parseMockData = reader.result;
+    console.warn(reader.result);
     this.jsonData.next(reader.result);
   }
 
