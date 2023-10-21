@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{html,ts}",
-  ],
+  content: ["./src/**/*.{html, ts}",
+            "./*.{html, ts}"],
   theme: {
     fontSize: {
       sm: '0.6rem',
@@ -11,9 +10,15 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'main-font' : ['Montserrat', 'sans-serif']
-      }
+        'main-font' : ['Montserrat', 'sans-serif'],
+        'number-font' : ['Bebas Neue', 'sans-serif']
+      },
+
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')({
+      strategy: 'class', // only generate classes
+    }),
+  ],
 }

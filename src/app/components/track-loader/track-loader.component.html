@@ -1,0 +1,10 @@
+<div class="container mx-auto">
+                 <form>
+                   <label for="track">Track</label>
+                   <select id="track" class="form-select px-4 py-3 rounded">
+                     <option *ngFor="let track of tracks" [value]="track.value">
+                       {{track.name}}
+                     </option>
+                   </select>
+                 </form>
+</div>
