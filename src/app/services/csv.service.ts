@@ -15,7 +15,7 @@ export class CsvService {
   mockEndpoint = 'https://api.myracepass.com/v3/broadcasts/ticker/demo';
   headers: {
     'Accept': 'text/csv'
-    'Access-Control-Allow-Origin' : '*,
+    'Access-Control-Allow-Origin' : '*',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS'
   };
 
