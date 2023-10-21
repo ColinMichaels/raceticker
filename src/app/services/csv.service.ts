@@ -12,9 +12,12 @@ export class CsvService {
   parseMockData: any;
   blob: any;
   jsonData: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-
-
   mockEndpoint = 'https://api.myracepass.com/v3/broadcasts/ticker/demo';
+  headers: {
+    'Accept': 'text/csv'
+    'Access-Control-Allow-Origin' : '*,
+    'Access-Control-Allow-Methods': 'POST, GET, OPTIONS'
+  };
 
   constructor(private http: HttpClient) {
 
@@ -23,7 +26,7 @@ export class CsvService {
   getCsv(endpoint: string){
     console.warn(endpoint);
     const url = (endpoint)? endpoint : this.mockEndpoint;
-    return this.http.get(endpoint, {responseType: 'blob', headers: {'Accept': 'text/csv'}})
+    return this.http.get(endpoint, {responseType: 'blob', headers: this.headers})
     .subscribe(blob => {
       this.blob = blob;
       this.loadCsvFromBlob(blob);
