@@ -13,8 +13,8 @@ export class CsvService {
   blob: any;
   jsonData: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   mockEndpoint = 'https://api.myracepass.com/v3/broadcasts/ticker/demo';
-  headers: {
-    'Accept': 'text/csv'
+  headers = {
+    'Accept': 'text/csv',
     'Access-Control-Allow-Origin' : '*',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS'
   };
