@@ -6,3 +6,19 @@
   color: rgb(157, 255, 0);
 }
 
+:host #ticker{
+  background-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  transform: scale(0.4);
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+::ng-deep body, ::ng-deep html{
+  background-color: transparent;
+}
+

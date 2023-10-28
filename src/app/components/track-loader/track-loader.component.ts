@@ -9,6 +9,7 @@ import {Track, TrackService} from "../../services/track.service";
 export class TrackLoaderComponent implements OnInit{
 
   public tracks: Track[] = [];
+  data: [] = [];
 
   constructor(private trackService: TrackService){
 
@@ -17,6 +18,7 @@ export class TrackLoaderComponent implements OnInit{
   ngOnInit(): void {
 
     this.tracks =  this.trackService.getTracks();
+    this.data = this.trackService.data;
 
   }
 

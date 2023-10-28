@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html, ts}",
-            "./*.{html, ts}"],
+  content: ["./src/**/*.{html, ts, scss}"],
   theme: {
     fontSize: {
       sm: '0.6rem',
@@ -21,4 +20,4 @@ module.exports = {
       strategy: 'class', // only generate classes
     }),
   ],
-}
+};

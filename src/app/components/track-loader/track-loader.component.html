@@ -1,10 +1,25 @@
-<div class="container mx-auto">
-                 <form>
-                   <label for="track">Track</label>
-                   <select id="track" class="form-select px-4 py-3 rounded">
-                     <option *ngFor="let track of tracks" [value]="track.value">
-                       {{track.name}}
-                     </option>
-                   </select>
-                 </form>
+<app-header></app-header>
+<div class="container mx-auto w-full p-6">
+  <form class="form mx-auto w-1/2">
+    <div>
+      <label for="track" class="text-white mr-4">Select Track</label>
+      <select id="track" class="form-select px-4 py-3 w-full rounded">
+        <option *ngFor="let track of tracks" [value]="track.value">
+          {{track.name}}
+        </option>
+      </select>
+    </div>
+    <div class="my-4">
+      <label for="feed" class="text-white mr-10">Feed URL</label>
+      <input type="url" id="feed" class="input rounded p-3 w-full" placeholder="https://api.myracepass.com/v3/broadcasts/ticker/demo" />
+    </div>
+    <div class="my-4 flex justify-end">
+      <button class="px-4 py-3 bg-slate-600 rounded" type="sumbit">Submit</button>
+    </div>
+
+  </form>
+
+  <div class="p-8 mt-8 bg-slate-600 highlight-text">
+    <code>{{data | json}}</code>
+  </div>
 </div>

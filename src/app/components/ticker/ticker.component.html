@@ -1,40 +1,41 @@
-<div class="container mx-auto ">
-<!--  <table class="table-auto">
-    <tbody class="table-header-group">
-    <tr><td colspan="5"> <div class="text-white py-2 px-4">{{mockData[0]['Track']}}   <span class="text-2xl highlight-text ml-4">{{mockData[0]['Class']}}</span></div></td></tr>
-    <tr *ngFor="let race of mockData.slice(0, 1);let i = index;" class="p-4 bg-slate-900 table-row">
-      <td class="table-cell" *ngFor="let num of [1,2,3,4,5]; let i = index;">
-        <span class="text-white px-2 py-2 bg-violet-800">{{race['Position'+num]}}</span>
-        <span class="font-bold highlight py-2 px-4">{{race['FullName'+num] | uppercase}}</span>
-        <span class="text-sm text-white "> Lap: {{race['Laps'+num]}}</span>
-        <div class=" text-2xl highlight mt-4 py-2 px-4">
-          <img class="float-left mr-2" [src]="flagSVG"/> {{race['LastLapTime'+num]}}
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>-->
+<div class="mx-auto flex flex-col" id="ticker">
+  <!--  <table class="table-auto">
+      <tbody class="table-header-group">
+      <tr><td colspan="5"> <div class="text-white py-2 px-4">{{mockData[0]['Track']}}   <span class="text-2xl highlight-text ml-4">{{mockData[0]['Class']}}</span></div></td></tr>
+      <tr *ngFor="let race of mockData.slice(0, 1);let i = index;" class="p-4 bg-slate-900 table-row">
+        <td class="table-cell" *ngFor="let num of [1,2,3,4,5]; let i = index;">
+          <span class="text-white px-2 py-2 bg-violet-800">{{race['Position'+num]}}</span>
+          <span class="font-bold highlight py-2 px-4">{{race['FullName'+num] | uppercase}}</span>
+          <span class="text-sm text-white "> Lap: {{race['Laps'+num]}}</span>
+          <div class=" text-2xl highlight mt-4 py-2 px-4">
+            <img class="float-left mr-2" [src]="flagSVG"/> {{race['LastLapTime'+num]}}
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>-->
 
-  <div class="w-1/5">
-    <div class="text-white py-2 px-4 mb-2"><span class="text-3xl">{{mockData[0]['Track']}}</span>   <span class="text-2xl highlight-text ml-4">{{mockData[0]['Class']}}</span></div>
+  <div class="w-full bg-black" *ngIf="mockData.length">
+    <div class="text-white py-1 px-4 mb-1 bg-slate-800">
+      <span class="text-3xl">{{mockData[0]['Track']}}</span> <span
+      class="text-2xl number-font text-white ml-4">{{mockData[0]['Class']}}</span></div>
     <div *ngFor="let race of mockData.slice(0, 1);let i = index;">
-           <div *ngFor="let num of [1,2,3,4,5]; let i = index;" class="mb-3 flex flex-col">
+      <div *ngFor="let num of [1,2,3,4,5]; let i = index;" class="mb-2 flex flex-col">
 
-             <div id="lap-times" class=" text-2xl bg-slate-500 flex justify-between items-center drop-shadow-lg">
-               <span class="text-white px-2 py-2 bg-violet-800">{{race['Position'+num]}}</span>
-               <div class="flex flex-row items-center -ml-24">
-                 <img class="mr-2" [src]="flagSVG"/>
-                 <span class="mr-2">{{race['LastLapTime'+num]}}</span>
-               </div>
-
-
-               <span class="text-base text-violet-900 mr-4"> Lap: {{race['Laps'+num]}}</span>
-             </div>
-             <div id="driver-info" class="flex flex-row justify-start bg-gradient-to-r from-[#9DFF00] via-[#77C700] to-[#9DFF00]">
-               <div class="text-2xl number-font italic text-violet-800 bg-slate-300 p-2 min-w-fit w-15">{{race['Number'+num]}}</div>
-               <div class="font-bold py-2 px-4 text-2xl">{{race['LastName'+num] | uppercase}}</div>
-             </div>
-           </div>
+        <div id="lap-times" class=" text-2xl bg-slate-700 flex justify-start items-center">
+          <span class="text-white px-3 py-1 bg-violet-800">{{race['Position' + num]}}</span>
+          <div class="flex flex-row justify-around items-center text-white">
+            <img class="mr-2 ml-4" [src]="flagSVG"/>
+            <span class="mr-2 text-highlight">{{race['LastLapTime' + num]}}</span>
+          </div>
+          <span class="text-base text-white ml-auto mr-4"> Lap: {{race['Laps' + num]}}</span>
+        </div>
+        <div id="driver-info" class="flex flex-row justify-start items-center highlight">
+          <div
+            class="text-2xl number-font italic text-violet-800 bg-slate-300 px-2 py-1 min-w-fit w-15">{{race['Number' + num]}}</div>
+          <div class="font-bold px-4 text-2xl">{{race['LastName' + num] | uppercase}}</div>
+        </div>
+      </div>
 
     </div>
   </div>
